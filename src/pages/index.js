@@ -1,8 +1,9 @@
+import { Menu } from "@/component/menu";
 
 export default function Home() {
   return (
     <>
-      <h2>Next JS configure</h2>
+      <Menu/>
    </>
   );
 }
