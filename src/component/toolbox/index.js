@@ -6,7 +6,7 @@ import { COLORS, MENU_ITEMS } from "@/constants";
 const Toolbox = () => {
   const dispatch = useDispatch();
   const menuItemClick = useSelector((state) => state.menu.activeMenuItem);
-  const { color } = useSelector((state) => state.toolbox[menuItemClick]);
+  const { color ,brushSize} = useSelector((state) => state.toolbox[menuItemClick]);
   const showPencil = menuItemClick === MENU_ITEMS.PENCIL;
   const showEraser = menuItemClick === MENU_ITEMS.ERASER;
   const updateColor = (newColor) => {
@@ -69,7 +69,7 @@ const Toolbox = () => {
             </div>
           </div>
           <div className={styles.toolItem}>
-            <h4 className={styles.toolText}>Brush Size</h4>
+            <h4 className={styles.toolText}>Brush Size : { brushSize}</h4>
             <div className={styles.itemContainer}>
               <input
                 type="range"
@@ -77,6 +77,7 @@ const Toolbox = () => {
                 max={10}
                 step={1}
                 onChange={updateBrushSize}
+                size={brushSize}
               />
             </div>
           </div>
@@ -84,13 +85,14 @@ const Toolbox = () => {
       )}
       {showEraser && (
         <div className={styles.toolItem}>
-          <h4 className={styles.toolText}>Brush Size</h4>
+          <h4 className={styles.toolText}>Eraser Size : { brushSize}</h4>
           <div className={styles.itemContainer}>
             <input
+            value={brushSize}
               type="range"
               min={1}
-              max={10}
-              step={1}
+              max={100}
+              step={10}
               onChange={updateBrushSize}
             />
           </div>
