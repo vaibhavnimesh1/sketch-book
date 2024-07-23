@@ -52,5 +52,5 @@ export const Menu = () => {
         <FontAwesomeIcon icon={faFileArrowDown} className={styles.icon} />
       </div>
     </div>
-  );
+  )
 };

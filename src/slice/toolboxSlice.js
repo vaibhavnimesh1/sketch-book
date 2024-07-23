@@ -7,11 +7,11 @@ const toolSlice = createSlice({
   initialState: {
     [MENU_ITEMS.PENCIL]: {
       color: "black",
-      brushSize:5
+      brushSize:"5"
    },
     [MENU_ITEMS.ERASER]: {
       color: "white",
-      brushSize:5
+      brushSize:"5"
     },
     [MENU_ITEMS.UNDO]:{},
     [MENU_ITEMS.REDO]:{},
